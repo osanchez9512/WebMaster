@@ -15,10 +15,7 @@ import twitter.ejb.TuitFacade;
 import twitter.entity.*;
 import twitter.ejb.UsuarioFacade;
 
-/**
- *
- * @author fgall
- */
+
 @Named(value = "usuarioBean")
 @SessionScoped
 public class UsuarioBean implements Serializable {    
