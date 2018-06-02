@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <b>DATOS DEL USUARIO</b><br/>
+        <b>Usuario: </b><i><h:outputText value ="#{usuarioBean.usuario.nombre}" /><br/></i>
+        <b>Descripcion </b><i> <h:outputText value ="#{usuarioBean.usuario.descripcion}" /><br/></i>
+        <b>Fecha </b><i> <h:outputText value ="#{usuarioBean.usuario.fecha}" /><br/></i>
+        <b>URL </b><i> <h:outputText value ="#{usuarioBean.usuario.url}" /><br/></i>
+        <b>PAIS </b><i> <h:outputText value ="#{usuarioBean.usuario.pais.region}" /><br/></i>
+        <b>SEGUIDOS </b><i> <h:outputText value ="#{usuarioBean.usuario.usuarioList.size()}" /><br/></i>
+        <b>SEGUIDORES </b><i> <h:outputText value ="#{usuarioBean.usuario.usuarioList1.size()}" /><br/></i>
+         <b>NUMERO DE RTs </b><i> <h:outputText value ="#{usuarioBean.usuario.tuitList1.size()}" /><br/></i>
+        <b>NUMERO DE MGs </b><i> <h:outputText value ="#{usuarioBean.usuario.tuitList2.size()}" /><br/></i>
+        <b>TweetLine</b>
+        <h:form>
+            <h:dataTable var ="tweet" value="#{usuarioBean.tweetLine}" >
+                <h:column>
+                    <f:facet name="header"> Usuario</f:facet>
+                    #{tweet.usuario.nombre}
+                </h:column> 
+                 <h:column>
+                    <f:facet name="header"> Tuit</f:facet>
+                    #{tweet.texto}
+                </h:column>
+                 <h:column>
+                    <f:facet name="header"> Fecha</f:facet>
+                    #{tweet.fecha}
+                </h:column>    <h:column>
+                    <f:facet name="header"> RT</f:facet>
+                    <h:commandButton action="#{usuarioBean.DarRT(tweet)}" value="RT" />
+                </h:column>   
+                   <h:column>
+                    <f:facet name="header"> MG</f:facet>
+                    <h:commandButton action="#{usuarioBean.DarMG(tweet)}" value="MG" />
+                </h:column>   
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
