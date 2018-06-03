@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body><h:form>
+        <table>
+            <tr>
+                <td>
+        <b>Título  </b>
+                </td><td>
+      <h:inputText value="#{editBean.nombrefilm}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <b>Descipcion  </b>
+                </td><td>
+                <h:inputText value="#{editBean.description}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <b>Año de lanzamiento  </b>
+                </td><td>
+                <h:inputText value="#{editBean.release_year}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <b>Duracion  </b>
+                </td><td>
+                <h:inputText value="#{editBean.rental_duraton}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <b>Valoracion  </b>
+                </td><td>
+                <h:inputText value="#{editBean.rental_rate}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <b>F_lenght  </b>
+                </td><td>
+                <h:inputText value="#{editBean.f_length}"/>
+                </td>
+            </tr>
+        </table>
+            <h:commandButton action="#{editBean.Edit()}" value="ENVIAR" />
+        </h:form>
+    </h:body>
+</html>
+
